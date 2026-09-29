@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Campus Node Builder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="node-builder.css">
+</head>
+<body>
+<div id="app">
+  <div id="canvasPane">
+    <h1>Campus Node Builder</h1>
+    <p class="hint">
+      1) Load a campus map image (screenshot of Google Maps satellite view works well).
+      2) In <b>Add node</b> mode, click a location, then name it.
+      3) Switch to <b>Link nodes</b> mode and click two nodes to connect them (click the same pair again to remove the link).
+    </p>
+    <div class="row">
+      <input type="file" id="fileInput" accept="image/*">
+      <button id="modeAdd" class="active">Add node</button>
+      <button id="modeLink">Link nodes</button>
+    </div>
+    <div id="canvasWrap"><canvas id="canvas" width="700" height="500"></canvas></div>
+  </div>
 
+  <div id="sidebar">
+    <div class="card">
+      <div class="row" style="justify-content:space-between;">
+        <strong>Nodes (<span id="count">0</span>)</strong>
+        <button id="clearAll" class="danger">Clear all</button>
+      </div>
+      <ul id="nodeList"></ul>
+    </div>
+    <div class="card">
+      <div class="row"><button id="exportBtn" class="primary">Generate code</button></div>
+      <textarea id="output" placeholder="Click 'Generate code' once you've placed and linked your nodes." readonly></textarea>
+    </div>
+  </div>
+</div>
+
+<script src="node-builder.js"></script>
+</body>
+</html>
