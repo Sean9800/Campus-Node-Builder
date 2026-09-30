@@ -19,7 +19,7 @@
     --line: #3a4d54;
   }
 }
-:root[data-theme+"dark"]{
+:root[data-theme="dark"]{
     --ink:#EFE8D8;
     --paper:#1c2b31;
     --white:#233841;
